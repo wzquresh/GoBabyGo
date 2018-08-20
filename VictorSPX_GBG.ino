@@ -87,9 +87,9 @@ void loop() {
     }
     
     
-    if(goState == 1 && motorSpeed > 181 && motorSpeed <= 255){  //Stopping State
+    if(goState == 1 && motorSpeed > 180 && motorSpeed <= 255){  //Stopping State
       //motorSpeed = prevSpeed;  //Start with previously stored speed for gradual decrease
-      for(motorSpeed; motorSpeed > 181; motorSpeed--){
+      for(motorSpeed; motorSpeed > 180; motorSpeed--){
         goState = digitalRead(buttonPin);
         if(goState == 0){
           //prevSpeed = motorSpeed;  //store previous speed
@@ -101,10 +101,11 @@ void loop() {
         Serial.println("STOPPING");
       }
     }
-    if (goState==1 && motorSpeed == 181){
+    
+    if (goState==1 && motorSpeed == 180){
       //prevSpeed = 181;  //reset previous speed when we reach zero
-      motorSpeed = 181;
-      analogWrite(motorPin, 0);  
+      motorSpeed = 180;
+      analogWrite(motorPin, 180);  
     }
   }
 
