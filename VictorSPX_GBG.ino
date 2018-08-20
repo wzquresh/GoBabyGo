@@ -75,7 +75,7 @@ void loop() {
       for(motorSpeed = prevSpeed; motorSpeed < 255; motorSpeed++){
         goState = digitalRead(buttonPin);
         if(goState == 1){
-          prevSpeed = motorSpeed;  //store previous speed
+          //prevSpeed = motorSpeed;  //store previous speed
           break;
         }
         analogWrite(motorPin, motorSpeed);
