@@ -104,7 +104,7 @@ void loop() {
     if (goState==1 && motorSpeed == 181){
       //prevSpeed = 181;  //reset previous speed when we reach zero
       motorSpeed = 181;
-      analogWrite(motorPin, 0);  
+      analogWrite(motorPin, 181);  
     }
   }
 
