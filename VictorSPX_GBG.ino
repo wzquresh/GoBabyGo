@@ -60,6 +60,7 @@ void setup() {
   digitalWrite(ground, LOW);
 
   prevSpeed = 181; //initialize previous speed
+  motorSpeed = 181;
 }
 
 void loop() {
@@ -72,7 +73,7 @@ void loop() {
   if (killState == 1){
     if(goState == 0 && motorSpeed != 255){  //Going State
       //motorSpeed = prevSpeed starts with previously stored speed for gradual speed up
-      for(motorSpeed = prevSpeed; motorSpeed < 255; motorSpeed++){
+      for(motorSpeed; motorSpeed < 255; motorSpeed++){
         goState = digitalRead(buttonPin);
         if(goState == 1){
           //prevSpeed = motorSpeed;  //store previous speed
@@ -91,7 +92,7 @@ void loop() {
       for(motorSpeed; motorSpeed > 181; motorSpeed--){
         goState = digitalRead(buttonPin);
         if(goState == 0){
-          prevSpeed = motorSpeed;  //store previous speed
+          //prevSpeed = motorSpeed;  //store previous speed
           break;
         }
         analogWrite(motorPin, motorSpeed);
@@ -101,7 +102,8 @@ void loop() {
       }
     }
     if (goState==1 && motorSpeed == 181){
-      prevSpeed = 181;  //reset previous speed when we reach zero
+      //prevSpeed = 181;  //reset previous speed when we reach zero
+      motorSpeed = 181;
       analogWrite(motorPin, 0);  
     }
   }
