@@ -60,7 +60,7 @@ void setup() {
   digitalWrite(ground, LOW);
 
   //prevSpeed = 181; //initialize previous speed
-  motorSpeed = 182;
+  motorSpeed = 183;
 }
 
 void loop() {
@@ -103,8 +103,8 @@ void loop() {
     }
     if (goState==1 && motorSpeed == 181){
       //prevSpeed = 181;  //reset previous speed when we reach zero
-      motorSpeed = 182;
-      analogWrite(motorPin, 182);  
+      motorSpeed = 183;
+      analogWrite(motorPin, 183);  
     }
   }
 
